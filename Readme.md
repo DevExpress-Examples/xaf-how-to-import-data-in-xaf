@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [E1719.ets](./CS/E1719.EasyTests/E1719.ets)
+* **[ImportDataManager.cs](./CS/ImportData/ImportDataManager.cs) (VB: [ImportDataManager.vb](./VB/ImportData/ImportDataManager.vb))**
+* [ImportDataListViewController.cs](./CS/WinWebSolution.Module/ImportDataListViewController.cs) (VB: [ImportDataListViewController.vb](./VB/WinWebSolution.Module/ImportDataListViewController.vb))
+* [ImportDataLogic.cs](./CS/WinWebSolution.Module/ImportDataLogic.cs) (VB: [ImportDataLogic.vb](./VB/WinWebSolution.Module/ImportDataLogic.vb))
+<!-- default file list end -->
 # How to import data in XAF
 
 

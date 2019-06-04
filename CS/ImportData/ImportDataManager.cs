@@ -41,7 +41,7 @@ namespace ImportData {
             IObjectSpace importObjectSpace = null;
             int countOK = 0;
             try {
-                importObjectSpace = Application.CreateObjectSpace();
+                importObjectSpace = Application.CreateObjectSpace(targetListView.CollectionSource.ObjectTypeInfo.Type);
                 for (int i = 0; i < count; i++) {
                     using (IObjectSpace nestedImportObjectSpace = importObjectSpace.CreateNestedObjectSpace()) {
                         PropertyCollectionSource pcs = targetListView.CollectionSource as PropertyCollectionSource;

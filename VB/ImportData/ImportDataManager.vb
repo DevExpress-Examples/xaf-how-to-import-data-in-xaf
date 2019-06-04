@@ -45,7 +45,7 @@ Namespace ImportData
 			Dim importObjectSpace As IObjectSpace = Nothing
 			Dim countOK As Integer = 0
 			Try
-				importObjectSpace = Application.CreateObjectSpace()
+				importObjectSpace = Application.CreateObjectSpace(targetListView.CollectionSource.ObjectTypeInfo.Type)
 				For i As Integer = 0 To count - 1
 					Using nestedImportObjectSpace As IObjectSpace = importObjectSpace.CreateNestedObjectSpace()
 						Dim pcs As PropertyCollectionSource = TryCast(targetListView.CollectionSource, PropertyCollectionSource)

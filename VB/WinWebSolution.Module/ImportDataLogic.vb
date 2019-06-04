@@ -60,10 +60,9 @@ Namespace WinWebSolution.Module
 			End Function
 		End Function
 		Public Shared Function CreateCoolPersonImportDataFromExcelDelegate() As ImportDataDelegate(Of Person)
-            Return AddressOf PersonImportDataFromExcel
-        End Function
-        Private Shared Function PersonImportDataFromExcel(Of Person)(ByVal objectSpace As IObjectSpace, <[ParamArray]> ByVal args() As Object) As Person
-            Throw New NotImplementedException("TODO: you can use the FileHelpers library to get the data from Excel and then fill your persistent object.")
+            Return Function(os As IObjectSpace, args() As Object)
+            	Throw New NotImplementedException("TODO: you can use the FileHelpers library to get the data from Excel and then fill your persistent object.")
+			End Function
         End Function
         Public Shared Function CreateCoolPersonImportDataFromXmlFileDelegate() As ImportDataDelegate(Of Person)
             Dim doc As New XmlDocument()

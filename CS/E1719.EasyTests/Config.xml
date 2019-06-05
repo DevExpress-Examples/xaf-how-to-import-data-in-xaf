@@ -5,14 +5,14 @@
 		<Application
 			Name="E1719Win"
 			FileName="[ConfigPath]\..\WinWebSolution.Win\Bin\Debug\WinWebSolution.Win.exe"
-			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WinAdapter.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WinAdapter.v13.1"
 			CommunicationPort="4100"/>
                                <!-- Web -->
 		<Application
 			Name="E1719Web"
 			Url="http://localhost:4030"
 			PhysicalPath="[ConfigPath]\..\WinWebSolution.Web"
-			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WebAdapter.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WebAdapter.v13.1"/>
 
 	</Applications>
 	<TestDatabases>

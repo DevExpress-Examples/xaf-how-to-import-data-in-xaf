@@ -34,7 +34,9 @@ public class ImportDataEFDesignTimeDbContextFactory : IDesignTimeDbContextFactor
 public class ImportDataEFEFCoreDbContext : DbContext {
 	public ImportDataEFEFCoreDbContext(DbContextOptions<ImportDataEFEFCoreDbContext> options) : base(options) {
 	}
-	//public DbSet<ModuleInfo> ModulesInfo { get; set; }
+    public DbSet<MyTask> MyTasks { get; set; }
+    public DbSet<Contact> Contacts { get; set; }
+    //public DbSet<ModuleInfo> ModulesInfo { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);

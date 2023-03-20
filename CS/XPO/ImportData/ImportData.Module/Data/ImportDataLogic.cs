@@ -11,7 +11,7 @@ using System.Xml;
 namespace ImportData.Module {
     public class ImportDataLogic {
 
-        public static ImportDataDelegate<PhoneNumber> CreateDummyPhoneNumberImportDataDelegate() {
+        public static ImportDataDelegate CreateDummyPhoneNumberImportDataDelegate() {
             return delegate (IObjectSpace os, object masterObject) {
                 for (int i = 0; i < 3; i++) {
                     MyTask phoneNumber = os.CreateObject<MyTask>();
@@ -22,7 +22,7 @@ namespace ImportData.Module {
         }
 
 
-        public static ImportDataDelegate<Person> CreateCoolPersonImportDataFromXmlFileDelegate() {
+        public static ImportDataDelegate CreateCoolPersonImportDataFromXmlFileDelegate() {
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(GetXmlString());
             return delegate (IObjectSpace os, object masterObject) {

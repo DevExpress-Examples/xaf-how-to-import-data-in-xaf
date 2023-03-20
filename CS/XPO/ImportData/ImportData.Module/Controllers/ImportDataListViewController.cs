@@ -39,15 +39,15 @@ namespace ImportData.Module.Controllers {
             ListView lv = (ListView)View;
             PropertyCollectionSource pcs = lv.CollectionSource as PropertyCollectionSource;
             if (pcs != null) {
-                ImportData<PhoneNumber>(ImportDataLogic.CreateDummyPhoneNumberImportDataDelegate(), View);
+                ImportData(ImportDataLogic.CreateDummyPhoneNumberImportDataDelegate(), View);
             }
         }
 
         private void ImportInMainView_Execute(object sender, SimpleActionExecuteEventArgs e) {
-            ImportData<Person>(ImportDataLogic.CreateCoolPersonImportDataFromXmlFileDelegate(), View);
+            ImportData(ImportDataLogic.CreateCoolPersonImportDataFromXmlFileDelegate(), View);
         }
 
-        public void ImportData<T>(ImportDataDelegate<T> importDataDelegate, ListView targetListView) where T : IXPSimpleObject {
+        public void ImportData(ImportDataDelegate importDataDelegate, ListView targetListView) {
             if (targetListView == null) {
                 throw new ArgumentNullException("targetlistView");
             }
@@ -69,9 +69,9 @@ namespace ImportData.Module.Controllers {
                     importObjectSpace.Rollback();
                 }
                 catch (Exception rollBackException) {
-                    throw new Exception(String.Format("An exception of type {0} was encountered while attempting to roll back the transaction while importing the data of the {1} type.\nError Message:{2}\nStackTrace:{3}", rollBackException.GetType(), typeof(T), rollBackException.Message, rollBackException.StackTrace), rollBackException);
+                    throw new Exception(String.Format("An exception of type {0} was encountered while attempting to roll back the transaction while importing the data of the {1} type.\nError Message:{2}\nStackTrace:{3}", rollBackException.GetType(), View.ObjectTypeInfo.Type, rollBackException.Message, rollBackException.StackTrace), rollBackException);
                 }
-                throw new UserFriendlyException(String.Format("Importing can't be finished!\nAn exception of type {0} was encountered while importing the data of the {1} type.\nError message = {2}\nStackTrace:{3}\nNo records were imported.", commitException.GetType(), typeof(T), commitException.Message, commitException.StackTrace));
+                throw new UserFriendlyException(String.Format("Importing can't be finished!\nAn exception of type {0} was encountered while importing the data of the {1} type.\nError message = {2}\nStackTrace:{3}\nNo records were imported.", commitException.GetType(), View.ObjectTypeInfo.Type, commitException.Message, commitException.StackTrace));
             }
             finally {
                 importObjectSpace.Dispose();

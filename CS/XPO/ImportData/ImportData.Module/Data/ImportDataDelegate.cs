@@ -6,5 +6,5 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ImportData.Module {
-    public delegate void ImportDataDelegate<T>(IObjectSpace objectSpace, object masterObject);
+    public delegate void ImportDataDelegate(IObjectSpace objectSpace, object masterObject);
 }

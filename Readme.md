@@ -6,18 +6,10 @@
 
 # How to import data in XAF
 
-> **Note**  
-> This example cannot be automatically converted to VB.NET because of the VB.NET compiler limitations. We apologize for any inconvenience...
 
-This example demonstrates how to import data from an XML-formatted text file, create business objects based on this data, validate them, and show the result in an XAF list view.
-
-## Blogpost
-
-- [ORM Magic–Importing from any datasource](https://community.devexpress.com/blogs/xaf/archive/2012/12/29/orm-magic-importing-from-any-datasource.aspx)
+This example demonstrates how to import data from an XML-formatted text file, create business objects based on this data, and show the result in an XAF list view.
 
 ## Files to Review
 
-* [E1719.ets](./CS/E1719.EasyTests/E1719.ets)
-* **[ImportDataManager.cs](./CS/ImportData/ImportDataManager.cs) (VB: [ImportDataManager.vb](./VB/ImportData/ImportDataManager.vb))**
-* [ImportDataListViewController.cs](./CS/WinWebSolution.Module/ImportDataListViewController.cs) (VB: [ImportDataListViewController.vb](./VB/WinWebSolution.Module/ImportDataListViewController.vb))
-* [ImportDataLogic.cs](./CS/WinWebSolution.Module/ImportDataLogic.cs) (VB: [ImportDataLogic.vb](./VB/WinWebSolution.Module/ImportDataLogic.vb))
+* [ImportDataListViewController.cs](./CS/XPO/ImportData/ImportData.Module/Controllers/ImportDataListViewController.cs) 
+* [ImportDataLogic.cs](./CS/XPO/ImportData/ImportData.Module/Data/ImportDataLogic.cs) 

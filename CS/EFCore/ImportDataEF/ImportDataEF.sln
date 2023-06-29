@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportDataEF.Blazor.Server", "ImportDataEF.Blazor.Server\ImportDataEF.Blazor.Server.csproj", "{BA12D26B-6B7E-4D6E-A839-D17AD624D1BC}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportDataEF.Module", "ImportDataEF.Module\ImportDataEF.Module.csproj", "{CADB2671-8374-4DAC-952A-A0EF230B8B2D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportDataEF.Win", "ImportDataEF.Win\ImportDataEF.Win.csproj", "{885A837B-8EB5-4AFB-A4AA-85437907FF47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportDataEF.Blazor.Server", "ImportDataEF.Blazor.Server\ImportDataEF.Blazor.Server.csproj", "{BA12D26B-6B7E-4D6E-A839-D17AD624D1BC}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

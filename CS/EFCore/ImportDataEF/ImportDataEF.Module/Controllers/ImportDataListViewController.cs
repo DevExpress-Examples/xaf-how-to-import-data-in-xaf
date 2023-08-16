@@ -18,36 +18,46 @@ using System.IO;
 using System.ComponentModel;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
+using System.Xml;
+using ImportDataEF.Module.BusinessObjects;
 
 namespace ImportDataEF.Module.Controllers {
     public class ImportDataListViewController : ViewController<ListView> {
 
         public ImportDataListViewController() {
-
             var importInMainView = new SimpleAction(this, "ImportInMainView", PredefinedCategory.RecordEdit);
             importInMainView.TargetViewNesting = Nesting.Root;
             importInMainView.Execute += ImportInMainView_Execute;
-
-            var importInNestedView = new SimpleAction(this, "ImportInNestedView", PredefinedCategory.RecordEdit);
-            importInNestedView.TargetViewNesting = Nesting.Nested;
-            importInNestedView.Execute += ImportInNestedView_Execute;
-
         }
 
-        private void ImportInNestedView_Execute(object sender, SimpleActionExecuteEventArgs e) {
 
-            ListView lv = (ListView)View;
-            PropertyCollectionSource pcs = lv.CollectionSource as PropertyCollectionSource;
-            if (pcs != null) {
-                ImportData(ImportDataLogic.CreateDummyPhoneNumberImportDataDelegate(), View);
-            }
-        }
 
         private void ImportInMainView_Execute(object sender, SimpleActionExecuteEventArgs e) {
-            ImportData(ImportDataLogic.CreateCoolPersonImportDataFromXmlFileDelegate(), View);
+            ImportDataMain(View);
         }
-
-        public void ImportData(ImportDataDelegate importDataDelegate, ListView targetListView) {
+        private static string GetXmlString() {
+            string xml = @"
+            <Contacts>
+            	<Contact>
+            		<FirstName>1</FirstName>
+            		<MiddleName>1</MiddleName>
+            		<LastName>1</LastName>
+            	</Contact>
+                <Contact>
+		            <FirstName>2</FirstName>
+		            <MiddleName>2</MiddleName>
+		            <LastName>2</LastName>
+	            </Contact>
+	            <Contact>
+		            <FirstName>3</FirstName>
+		            <MiddleName>3</MiddleName>
+		            <LastName>3</LastName>
+	            </Contact>
+            </Contacts>
+            ";
+            return xml;
+        }
+        public void ImportDataMain(ListView targetListView) {
             if (targetListView == null) {
                 throw new ArgumentNullException("targetlistView");
             }
@@ -55,11 +65,16 @@ namespace ImportDataEF.Module.Controllers {
             try {
                 importObjectSpace = Application.CreateObjectSpace(targetListView.CollectionSource.ObjectTypeInfo.Type);
                 using (IObjectSpace nestedImportObjectSpace = importObjectSpace.CreateNestedObjectSpace()) {
-                    PropertyCollectionSource pcs = targetListView.CollectionSource as PropertyCollectionSource;
-                    object masterObject = pcs != null ? nestedImportObjectSpace.GetObjectByKey(pcs.MasterObjectType, nestedImportObjectSpace.GetKeyValue(pcs.MasterObject)) : null;
-                    importDataDelegate(nestedImportObjectSpace, masterObject);
-                    nestedImportObjectSpace.CommitChanges();
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(GetXmlString());
 
+                    foreach (XmlNode element in doc.ChildNodes[0].ChildNodes) {
+                        Contact person = nestedImportObjectSpace.CreateObject<Contact>();
+                        person.FirstName = String.Format("FirstName{0}", element.ChildNodes[0].InnerText);
+                        person.LastName = String.Format("LastName{0}", element.ChildNodes[2].InnerText);
+
+                    };
+                    nestedImportObjectSpace.CommitChanges();
                 }
                 importObjectSpace.CommitChanges();
                 targetListView.ObjectSpace.Refresh();

@@ -10,12 +10,14 @@ This example demonstrates how to import data from an XML-formatted text file, cr
 
 ## Implementation Details
 
-To accomplish this task import data from any custom source (we use an XML string in this example) and then generate the required business objects based on this data using the following API: [Create, Read, Update and Delete Data](https://docs.devexpress.com/eXpressAppFramework/113711/data-manipulation-and-business-logic/create-read-update-and-delete-data)
+1. Import data from any custom source (we use an XML string in this example).
+2. Generate the required business objects based on this data using the following API: [Create, Read, Update and Delete Data](https://docs.devexpress.com/eXpressAppFramework/113711/data-manipulation-and-business-logic/create-read-update-and-delete-data)
 
 
 ## Files to Review
 
-* [ImportDataListViewController.cs](CS/EFCore/ImportDataEF/ImportDataEF.Module/Controllers/ImportDataListViewController.cs) 
+- [ImportDataListViewController.cs](CS/EFCore/ImportDataEF/ImportDataEF.Module/Controllers/ImportDataListViewController.cs) 
 
 ## Documentation
+
 - [Create, Read, Update and Delete Data](https://docs.devexpress.com/eXpressAppFramework/113711/data-manipulation-and-business-logic/create-read-update-and-delete-data)

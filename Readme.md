@@ -11,7 +11,7 @@ This example demonstrates how to import data from an XML-formatted text file, cr
 ## Implementation Details
 
 1. Import data from any custom source (we use an XML string in this example).
-2. Generate the required business objects based on this data using the following API: [Create, Read, Update and Delete Data](https://docs.devexpress.com/eXpressAppFramework/113711/data-manipulation-and-business-logic/create-read-update-and-delete-data)
+2. Based on this data, generate the required business objects using an approach from the following topic: [Create, Read, Update and Delete Data](https://docs.devexpress.com/eXpressAppFramework/113711/data-manipulation-and-business-logic/create-read-update-and-delete-data)
 
 
 ## Files to Review

@@ -6,10 +6,18 @@
 
 # How to import data in XAF
 
-
 This example demonstrates how to import data from an XML-formatted text file, create business objects based on this data, and show the result in an XAF list view.
+
+## Implementation Details
+
+1. Import data from any custom source (we use an XML string in this example).
+2. Based on this data, generate the business objects using an approach from the following topic: [Create, Read, Update, and Delete Data](https://docs.devexpress.com/eXpressAppFramework/113711/data-manipulation-and-business-logic/create-read-update-and-delete-data).
+
 
 ## Files to Review
 
-* [ImportDataListViewController.cs](./CS/XPO/ImportData/ImportData.Module/Controllers/ImportDataListViewController.cs) 
-* [ImportDataLogic.cs](./CS/XPO/ImportData/ImportData.Module/Data/ImportDataLogic.cs) 
+- [ImportDataListViewController.cs](CS/EFCore/ImportDataEF/ImportDataEF.Module/Controllers/ImportDataListViewController.cs) 
+
+## Documentation
+
+- [Create, Read, Update and Delete Data](https://docs.devexpress.com/eXpressAppFramework/113711/data-manipulation-and-business-logic/create-read-update-and-delete-data)

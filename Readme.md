@@ -23,7 +23,7 @@ This example demonstrates how to import data from an XML-formatted text file, cr
 * [ImportDataListViewController.cs](./CS/WinWebSolution.Module/ImportDataListViewController.cs) (VB: [ImportDataListViewController.vb](./VB/WinWebSolution.Module/ImportDataListViewController.vb))
 * [ImportDataLogic.cs](./CS/WinWebSolution.Module/ImportDataLogic.cs) (VB: [ImportDataLogic.vb](./VB/WinWebSolution.Module/ImportDataLogic.vb))
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-how-to-import-data-in-xaf&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-how-to-import-data-in-xaf&~~~was_helpful=no)
 

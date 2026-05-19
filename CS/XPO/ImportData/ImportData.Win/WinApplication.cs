@@ -14,7 +14,6 @@ public class ImportDataWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "ImportData";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += ImportDataWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += ImportDataWindowsFormsApplication_CustomizeLanguagesList;
     }

@@ -18,7 +18,6 @@ public class ImportDataEFWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "ImportDataEF";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += ImportDataEFWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += ImportDataEFWindowsFormsApplication_CustomizeLanguagesList;
     }
